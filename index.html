@@ -7,49 +7,106 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      background-color: #111;
+      background: #ffc0cb; /* soft pink background */
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      color: #ff69b4;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
+      overflow-y: scroll;
+      position: relative;
+    }
+
+    /* Blossom trees in corners using emojis as decoration */
+    body::before, body::after, .letter-box::before, .letter-box::after {
+      content: "🌸";
+      position: absolute;
+      font-size: 6vw;
+      opacity: 0.8;
+    }
+
+    body::before {
+      top: 0;
+      left: 0;
+    }
+
+    body::after {
+      top: 0;
+      right: 0;
+    }
+
+    .letter-box::before {
+      bottom: 0;
+      left: 0;
+    }
+
+    .letter-box::after {
+      bottom: 0;
+      right: 0;
     }
 
     .letter-box {
-      width: 95%;
-      max-height: 95%;
-      background-color: #1c1c1c;
+      width: 90%;
+      max-width: 700px;
+      margin: 50px 0;
+      background: #ffe6f0; /* lighter pink */
       border-radius: 20px;
       padding: 30px;
-      box-shadow: 0 0 50px rgba(255,105,180,0.6);
+      box-shadow: 0 0 60px rgba(255,105,180,0.8);
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
-      overflow: hidden;
+      position: relative;
     }
 
     h1 {
-      font-size: 6vw; /* bigger and dramatic */
+      font-size: 8vw;
       margin-bottom: 20px;
-      color: #ff4d6d;
+      background: linear-gradient(90deg, #ff4d6d, #ffb6c1, #ff69b4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     p {
-      font-size: 3vw; /* bigger than last version */
-      line-height: 1.5;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      margin: 0;
+      font-size: 3vw;
+      line-height: 1.6;
+      margin: 0 0 20px 0;
+      color: #ff69b4;
+    }
+
+    .scroll-arrow {
+      font-size: 4vw;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff4d6d, #ffb6c1, #ff69b4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-top: 20px;
+      animation: bounce 1.5s infinite, pulse 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(10px); }
+      60% { transform: translateY(5px); }
+    }
+
+    @keyframes pulse {
+      0% { filter: drop-shadow(0 0 5px #ff69b4); }
+      50% { filter: drop-shadow(0 0 15px #ffb6c1); }
+      100% { filter: drop-shadow(0 0 5px #ff69b4); }
     }
 
     @media screen and (max-width: 600px) {
       h1 {
-        font-size: 9vw;
+        font-size: 12vw;
       }
       p {
         font-size: 4vw;
+      }
+      .scroll-arrow {
+        font-size: 6vw;
+      }
+      body::before, body::after, .letter-box::before, .letter-box::after {
+        font-size: 8vw;
       }
     }
   </style>
@@ -60,27 +117,33 @@
     <p>
       Adrita ❤️,<br><br>
 
-      I know I messed up 😔💔  
-      Staying quiet instead of explaining hurt you 🥺🙏  
-      That was never my intention, and I feel awful 😭  
+      I know I messed up and made you feel hurt 😔💔<br>
+      I never wanted you to feel ignored or unimportant 🥺🙏<br>
+      Every moment with you matters more than anything, and it pains me to know I made you doubt that 😭💖<br><br>
 
-      <br><br>
+      I also want to clear up the misunderstanding 💌✨<br>
+      There’s nothing going on between me and my tuition teacher’s daughter 💖  
+      You are the only one I care about, and I hate that this caused you pain 💔🥀<br><br>
 
-      You mean so much to me ❤️💖  
-      You make my days brighter 🌙💫  
-      I just want you to feel happy and safe 🫶✨  
+      You are the most amazing person I’ve ever met 🌙💫<br>
+      Every laugh, every message, every little thing we share matters so much 🌸💖  
+      I think about you all the time and I just want to make you feel loved and happy 🫶✨<br><br>
 
-      <br><br>
+      I promise to always be honest, caring, and give you the attention you deserve 💌💓  
+      I want to be someone you can trust completely and someone who makes your days better 💖🌟  
+      You deserve the best, and I want to be that for you 🥀💫<br><br>
 
-      I don’t expect immediate forgiveness ⏳  
-      I just want you to know this apology is real 💌💔  
-      My feelings for you are genuine 🥀💖  
+      I’m really, really sorry for hurting you 😭💔  
+      I hope you can see that my feelings are real, that I truly care about you 🫶💖  
+      I’ll do everything I can to make it up to you and never let doubt come between us again 💌💓<br><br>
 
-      <br><br>
+      You mean the world to me ❤️💖  
+      And I just want you to know that no matter what, I’m always thinking of you and caring for you 🌸✨<br><br>
 
-      Always sorry, always caring 🫶💓<br>
+      Always yours, always loving 🫶💓<br>
       — Dishan 💌
     </p>
+    <div class="scroll-arrow">⬇️ Scroll down ⬇️</div>
   </div>
 </body>
 </html>
