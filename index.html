@@ -6,107 +6,91 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      background: #ffc0cb; /* soft pink background */
+      background-color: #ffc0cb; /* soft pink background */
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
       overflow-y: scroll;
       position: relative;
+      min-height: 100%;
     }
 
-    /* Blossom trees in corners using emojis as decoration */
+    /* Cherry blossom emojis in corners */
     body::before, body::after, .letter-box::before, .letter-box::after {
       content: "🌸";
       position: absolute;
-      font-size: 6vw;
+      font-size: 20vw; /* huge blossoms */
       opacity: 0.8;
+      z-index: 0;
     }
-
-    body::before {
-      top: 0;
-      left: 0;
-    }
-
-    body::after {
-      top: 0;
-      right: 0;
-    }
-
-    .letter-box::before {
-      bottom: 0;
-      left: 0;
-    }
-
-    .letter-box::after {
-      bottom: 0;
-      right: 0;
-    }
+    body::before { top: -10vw; left: -10vw; }
+    body::after { top: -10vw; right: -10vw; }
+    .letter-box::before { bottom: -10vw; left: -10vw; }
+    .letter-box::after { bottom: -10vw; right: -10vw; }
 
     .letter-box {
       width: 90%;
       max-width: 700px;
-      margin: 50px 0;
-      background: #ffe6f0; /* lighter pink */
-      border-radius: 20px;
-      padding: 30px;
+      margin: 50px auto;
+      background-color: #ffe6f0; /* lighter pink */
+      border-radius: 25px;
+      padding: 50px;
       box-shadow: 0 0 60px rgba(255,105,180,0.8);
       display: flex;
       flex-direction: column;
       text-align: center;
       position: relative;
+      z-index: 1; /* above blossoms */
     }
 
     h1 {
-      font-size: 8vw;
-      margin-bottom: 20px;
+      font-size: 12vw;
+      margin-bottom: 30px;
       background: linear-gradient(90deg, #ff4d6d, #ffb6c1, #ff69b4);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     p {
-      font-size: 3vw;
-      line-height: 1.6;
-      margin: 0 0 20px 0;
-      color: #ff69b4;
+      font-size: 5vw;
+      line-height: 1.8;
+      margin: 0 0 30px 0;
+      color: #ff4d6d;
     }
 
+    /* Scroll arrow */
     .scroll-arrow {
-      font-size: 4vw;
+      font-size: 8vw;
       font-weight: bold;
       background: linear-gradient(90deg, #ff4d6d, #ffb6c1, #ff69b4);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-top: 20px;
       animation: bounce 1.5s infinite, pulse 2s infinite;
+      z-index: 100;
     }
 
     @keyframes bounce {
       0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(10px); }
-      60% { transform: translateY(5px); }
+      40% { transform: translateY(15px); }
+      60% { transform: translateY(8px); }
     }
 
     @keyframes pulse {
       0% { filter: drop-shadow(0 0 5px #ff69b4); }
-      50% { filter: drop-shadow(0 0 15px #ffb6c1); }
+      50% { filter: drop-shadow(0 0 20px #ff1493); }
       100% { filter: drop-shadow(0 0 5px #ff69b4); }
     }
 
+    /* Sticky scroll arrow only on mobile */
     @media screen and (max-width: 600px) {
-      h1 {
-        font-size: 12vw;
-      }
-      p {
-        font-size: 4vw;
+      h1 { font-size: 18vw; }
+      p { font-size: 6vw; }
+      body::before, body::after, .letter-box::before, .letter-box::after {
+        font-size: 25vw;
       }
       .scroll-arrow {
-        font-size: 6vw;
-      }
-      body::before, body::after, .letter-box::before, .letter-box::after {
-        font-size: 8vw;
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   </style>
@@ -119,7 +103,7 @@
 
       I know I messed up and made you feel hurt 😔💔<br>
       I never wanted you to feel ignored or unimportant 🥺🙏<br>
-      Every moment with you matters more than anything, and it pains me to know I made you doubt that 😭💖<br><br>
+      Every moment with you matters more than anything, and it hurts me to know I made you doubt that 😭💖<br><br>
 
       I also want to clear up the misunderstanding 💌✨<br>
       There’s nothing going on between me and my tuition teacher’s daughter 💖  
@@ -143,7 +127,7 @@
       Always yours, always loving 🫶💓<br>
       — Dishan 💌
     </p>
-    <div class="scroll-arrow">⬇️ Scroll down ⬇️</div>
   </div>
+  <div class="scroll-arrow">⬇️ Scroll down ⬇️</div>
 </body>
 </html>
