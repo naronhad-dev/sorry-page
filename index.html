@@ -3,31 +3,36 @@
 <head>
   <title>Sorry Letter</title>
   <style>
-    body {
-      background-color: #111;
-      color: #ff69b4; /* pink font */
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: left;
-      padding: 20px;
-    }
-    .letter-box {
-      max-width: 600px;
-      line-height: 1.6;
-      background-color: #1c1c1c;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(255,105,180,0.4);
-    }
-    h1 {
-      text-align: center;
-      color: #ff4d6d;
-      margin-bottom: 20px;
-    }
-  </style>
+  body {
+    background-color: #111;
+    color: #ff69b4; /* pink font */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+  .letter-box {
+    width: 90%;           /* almost full width */
+    height: 90%;          /* almost full height */
+    line-height: 1.8;
+    font-size: 1.5em;     /* bigger text */
+    background-color: #1c1c1c;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255,105,180,0.5);
+    overflow-y: auto;     /* scroll if needed */
+  }
+  h1 {
+    text-align: center;
+    color: #ff4d6d;
+    font-size: 3em;       /* huge title */
+    margin-bottom: 30px;
+  }
+</style>
 </head>
 <body>
   <div class="letter-box">
